@@ -319,10 +319,16 @@ textarea::-ms-input-placeholder {
   grid-template-columns: 1fr 3fr;
   align-items: center;
 }
+.footer__logo img {
+  width: 70px;
+  height: auto;
+}
 .footer__copyright {
   display: grid;
   grid-template-columns: 1fr 3fr;
   align-items: center;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
 }
 .footer__authors {
   display: grid;
@@ -336,6 +342,10 @@ textarea::-ms-input-placeholder {
 }
 .footer__author-img {
   margin-right: 10px;
+}
+.footer__author-img img {
+  width: 35px;
+  height: auto;
 }
 
 /*# sourceMappingURL=styles.css.map */
