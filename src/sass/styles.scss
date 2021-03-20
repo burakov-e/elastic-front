@@ -1,0 +1,315 @@
+@import "../font/_font";
+@import "nullstyle";
+
+
+$theme-font: "STARWARS", Vernanda,Arial, san-serif;
+$main-font: Montserrat, Arial, san-serif;
+$text-color: rgba(255,255,255);
+$placeholder-color: rgba(255,255,255, 0.4);
+$pink: #ff0bfc;
+
+html {
+  font: {
+    family: $main-font;
+    size: 16px;
+    weight: normal;
+  }
+  color: $text-color;
+}
+
+body {
+  background: url("../images/background.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  scroll-behavior: smooth;
+  backdrop-filter: blur(2px);
+
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/*  header */
+.header {
+  flex: 0 0 auto;
+
+  padding: 0.9rem 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+
+  &__title {
+    text-align: center;
+
+    font: {
+      family: $theme-font;
+      size: 2rem;
+      weight: bold;
+    }
+
+    color: black;
+    -webkit-text-stroke: 0.5px yellow;
+  }
+}
+
+/* main */
+
+.main {
+  flex: 1 0 auto;
+
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto 20px;
+  padding: 0 10px;
+
+  /* Форма запроса */
+  .request {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+
+    &__body {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 15px;
+    }
+
+    /* Строка запроса */
+    &__input {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+
+      background: rgb(39, 41, 45, 0.9);
+      color: rgba($text-color, 0.9);
+
+      display: block;
+      padding: 0.3rem 1rem;
+
+      resize: vertical;
+
+      width: 100%;
+      height: 32px;
+      min-height: 32px;
+      max-height: 150px;
+
+      font-size: 1rem;
+      border-radius: 16px;
+      border: 1px solid transparent;
+
+      transition: .3s ease-in-out;
+
+      &:hover {
+        border-color: $pink;
+      }
+
+      &:focus {
+        border-color: #67ff5e;
+        background: rgb(39, 41, 45, 1);
+      }
+    }
+
+    &__wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    &__method {
+      display: flex;
+      align-items: center;
+
+      /* Метод запроса */
+      .select {
+        position: relative;
+
+        display: flex;
+        width: 150px;
+
+        margin-left: 10px;
+
+        overflow: hidden;
+        border-radius: 16px;
+        border: 1px solid transparent;
+
+        font-size: 1rem;
+
+        background: rgb(39, 41, 45, 0.9);
+        transition: .3s ease-in-out;
+
+        &:hover {
+          border-color: $pink;
+        }
+
+        &::after {
+          content: '';
+          display: inline-block;
+
+          position: absolute;
+          top: 8.5px;
+          right: 16px;
+
+          border: solid $text-color;
+          border-width: 0 3px 3px 0;
+
+          padding: 3px;
+
+          transform: rotate(45deg);
+          -webkit-transform: rotate(45deg);
+
+          transition: all .3ms ease;
+
+          z-index: 1;
+        }
+
+        select {
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+
+          background: none;
+          border: none;
+
+          flex: 1;
+
+          padding: 8px 16px;
+
+          cursor: pointer;
+
+          color: rgba($text-color, 0.9);
+          font-family:inherit;
+
+          option {
+            color: rgba($text-color, 1);
+
+            font: {
+              family: inherit;
+              size: 0.9rem;
+            };
+
+            background-color: rgb(39, 41, 45, 1);
+          }
+        }
+      }
+
+      .select.focus {
+        border-color:#67ff5e;
+        background: rgb(39, 41, 45, 1);
+      }
+
+      .open.select::after {
+        top: 12px;
+        transform: rotate(-135deg);
+        -webkit-transform: rotate(-135deg);
+      }
+    }
+
+    &__send {
+      button {
+        width: 200px;
+        padding: 8px;
+
+        font-size: 1rem;
+        text-transform: uppercase;
+
+        color: $text-color;
+        background: rgb(39, 41, 45, 1);
+
+        border: 1px solid transparent;
+        border-radius: 16px;
+
+        transition: .5ms linear;
+
+        &:hover {
+          border-color: $pink;
+          box-shadow: 1px 1px 1px rgba($pink, .5),
+          -1px -1px 1px rgba($pink, .5);
+        }
+
+        &:active {
+          box-shadow: inset 2px 1px 8px rgba($pink, .5);
+        }
+      }
+    }
+  }
+
+  .label, .title {
+    display: inline-block;
+    margin-bottom: 5px;
+
+    font-size: 1.1rem;
+    font-weight: 500;
+
+    line-height: 1.6;
+
+    text-transform: uppercase;
+  }
+
+  /* Резульат */
+  .result {
+    background: rgb(39, 41, 45, 0.9);
+    color: rgba($text-color, 0.9);
+
+    padding: 10px 15px;
+    width: 100%;
+    height: 400px;
+
+    overflow-y: auto;
+
+    border-radius: 5px;
+
+    font-size: 1rem;
+    line-height: 1.5;
+    word-spacing: 3px;
+  }
+}
+
+textarea::placeholder { color: $placeholder-color;}
+textarea::-webkit-input-placeholder { color: $placeholder-color;}
+textarea::-moz-placeholder { color: $placeholder-color;}
+textarea::-moz-placeholder { color: $placeholder-color;}
+textarea::-ms-input-placeholder { color: $placeholder-color;}
+
+/* footer */
+.footer {
+  flex: 0 0 auto;
+
+    background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(20px);
+
+  padding: 0.9rem 3rem;
+
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  align-items: center;
+
+  &__copyright {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    align-items: center;
+  }
+
+  &__authors {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: stretch;
+    grid-column-gap: 15px;
+  }
+
+  &__author {
+    display: flex;
+    align-items: center;
+  }
+
+  &__author-img {
+    margin-right: 10px;
+  }
+}

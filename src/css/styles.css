@@ -1,0 +1,341 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "STARWARS";
+  src: url("STARWARS.eot?") format("eot"), url("STARWARS.woff") format("woff"), url("STARWARS.ttf") format("truetype"), url("STARWARS.svg#STARWARS") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/*Обнуление*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+a:focus,
+a:active,
+:focus,
+:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  line-height: 1;
+  font-size: 16px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited,
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.hide-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+/*--------------------*/
+html {
+  font-family: Montserrat, Arial, san-serif;
+  font-size: 16px;
+  font-weight: normal;
+  color: white;
+}
+
+body {
+  background: url("../images/background.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  scroll-behavior: smooth;
+  backdrop-filter: blur(2px);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/*  header */
+.header {
+  flex: 0 0 auto;
+  padding: 0.9rem 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+}
+.header__title {
+  text-align: center;
+  font-family: "STARWARS", Vernanda, Arial, san-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  color: black;
+  -webkit-text-stroke: 0.5px yellow;
+}
+
+/* main */
+.main {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto 20px;
+  padding: 0 10px;
+  /* Форма запроса */
+  /* Резульат */
+}
+.main .request {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  /* Строка запроса */
+}
+.main .request__body {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+.main .request__input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: rgba(39, 41, 45, 0.9);
+  color: rgba(255, 255, 255, 0.9);
+  display: block;
+  padding: 0.3rem 1rem;
+  resize: vertical;
+  width: 100%;
+  height: 32px;
+  min-height: 32px;
+  max-height: 150px;
+  font-size: 1rem;
+  border-radius: 16px;
+  border: 1px solid transparent;
+  transition: 0.3s ease-in-out;
+}
+.main .request__input:hover {
+  border-color: #ff0bfc;
+}
+.main .request__input:focus {
+  border-color: #67ff5e;
+  background: #27292d;
+}
+.main .request__wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.main .request__method {
+  display: flex;
+  align-items: center;
+  /* Метод запроса */
+}
+.main .request__method .select {
+  position: relative;
+  display: flex;
+  width: 150px;
+  margin-left: 10px;
+  overflow: hidden;
+  border-radius: 16px;
+  border: 1px solid transparent;
+  font-size: 1rem;
+  background: rgba(39, 41, 45, 0.9);
+  transition: 0.3s ease-in-out;
+}
+.main .request__method .select:hover {
+  border-color: #ff0bfc;
+}
+.main .request__method .select::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 8.5px;
+  right: 16px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  padding: 3px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transition: all 0.3ms ease;
+  z-index: 1;
+}
+.main .request__method .select select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: none;
+  border: none;
+  flex: 1;
+  padding: 8px 16px;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.9);
+  font-family: inherit;
+}
+.main .request__method .select select option {
+  color: white;
+  font-family: inherit;
+  font-size: 0.9rem;
+  background-color: #27292d;
+}
+.main .request__method .select.focus {
+  border-color: #67ff5e;
+  background: #27292d;
+}
+.main .request__method .open.select::after {
+  top: 12px;
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+.main .request__send button {
+  width: 200px;
+  padding: 8px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: white;
+  background: #27292d;
+  border: 1px solid transparent;
+  border-radius: 16px;
+  transition: 0.5ms linear;
+}
+.main .request__send button:hover {
+  border-color: #ff0bfc;
+  box-shadow: 1px 1px 1px rgba(255, 11, 252, 0.5), -1px -1px 1px rgba(255, 11, 252, 0.5);
+}
+.main .request__send button:active {
+  box-shadow: inset 2px 1px 8px rgba(255, 11, 252, 0.5);
+}
+.main .label, .main .title {
+  display: inline-block;
+  margin-bottom: 5px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+.main .result {
+  background: rgba(39, 41, 45, 0.9);
+  color: rgba(255, 255, 255, 0.9);
+  padding: 10px 15px;
+  width: 100%;
+  height: 400px;
+  overflow-y: auto;
+  border-radius: 5px;
+  font-size: 1rem;
+  line-height: 1.5;
+  word-spacing: 3px;
+}
+
+textarea::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+textarea::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+textarea::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+textarea::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+textarea::-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* footer */
+.footer {
+  flex: 0 0 auto;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(20px);
+  padding: 0.9rem 3rem;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  align-items: center;
+}
+.footer__copyright {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  align-items: center;
+}
+.footer__authors {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: stretch;
+  grid-column-gap: 15px;
+}
+.footer__author {
+  display: flex;
+  align-items: center;
+}
+.footer__author-img {
+  margin-right: 10px;
+}
+
+/*# sourceMappingURL=styles.css.map */

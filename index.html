@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Star Wars</title>
+    <link rel="stylesheet" href="./src/css/styles.css">
+</head>
+<body>
+    <header class="header">
+        <h1 class="header__title">Star wars</h1>
+    </header>
+
+    <main class="main">
+        <form id="request" class="request">
+            <div class="request__body">
+                <label for="request__input" class="label">Запрос</label>
+                <textarea name="request-field" id="request__input" placeholder="Введите запрос..." class="request__input" required></textarea>
+                <script type="module">
+					let textarea = document.querySelector('textarea');
+
+					textarea.addEventListener('keyup', function() {
+						if(this.scrollTop > 0){
+							this.style.height = this.scrollHeight + "px";
+						}
+					});
+                </script>
+            </div>
+
+            <div class="request__wrap">
+                <div class="request__method">
+                    <label for="select" class="label">Метод запроса:</label>
+
+                    <div class="select">
+                        <select name="method" id="select">
+                            <option value="GET">GET</option>
+                            <option value="POST">POST</option>
+                            <option value="PUT">PUT</option>
+                            <option value="DELETE">DELETE</option>
+                        </select>
+                    </div>
+
+                    <script type="module">
+                        let select = document.querySelector('.select');
+
+                        select.addEventListener('click', function () {
+                            this.closest('.select').classList.toggle('open');
+							this.closest('.select').classList.toggle('focus');
+						})
+                    </script>
+                </div>
+
+                <div class="request__send">
+                    <button type="submit">Отправить</button>
+                </div>
+            </div>
+        </form>
+
+        <div class="response">
+            <p class="title">Результат</p>
+
+            <div class="result">
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__logo">
+            <img src="src/images/star-wars_logo.png" alt="star wars logo">
+        </div>
+
+        <div class="footer__copyright">
+            <div class="copy">&copy; 2021, made by</div>
+
+            <div class="footer__authors">
+                <div class="footer__author">
+                    <div class="footer__author-img">
+                        <img src="src/images/avatar_yoda.png" alt="Author image">
+                    </div>
+                    <h3 class="footer__author-name">Master Yoda</h3>
+                </div>
+
+                <div class="footer__author">
+                    <div class="footer__author-img">
+                        <img src="src/images/avatar_dart_vader.png" alt="Author image">
+                    </div>
+                    <h3 class="footer__author-name">Dart Vader</h3>
+                </div>
+
+                <div class="footer__author">
+                    <div class="footer__author-img">
+                        <img src="src/images/avatar_luke_skywalker.png" alt="Author image">
+                    </div>
+                    <h3 class="footer__author-name">Luke Skywalker</h3>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
