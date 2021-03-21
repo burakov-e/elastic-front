@@ -323,26 +323,23 @@ textarea::-ms-input-placeholder {
   padding: 0.9rem 3rem;
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
-}
-.footer__logo {
-  margin: auto;
 }
 .footer__logo img {
   width: 70px;
   height: auto;
 }
 .footer__copyright {
-  margin: auto;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
   flex-wrap: wrap;
   font-size: 0.8rem;
   color: rgba(255, 255, 255, 0.7);
 }
 .footer__copyright .copy {
-  margin: auto;
+  margin: 0 30px;
 }
 .footer__authors {
   margin: auto;
