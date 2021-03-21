@@ -296,11 +296,12 @@ textarea::-ms-input-placeholder { color: $placeholder-color;}
 
   padding: 0.9rem 3rem;
 
-  display: grid;
-  grid-template-columns: 1fr 3fr;
+  display: flex;
   align-items: center;
+  flex-wrap: wrap;
 
   &__logo {
+    margin: auto;
     img {
       width: 70px;
       height: auto;
@@ -308,15 +309,22 @@ textarea::-ms-input-placeholder { color: $placeholder-color;}
   }
 
   &__copyright {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
+    margin: auto;
+    display: flex;
     align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
 
     font-size: 0.8rem;
     color: rgba($text-color, 0.7);
+
+    .copy {
+      margin: auto;
+    }
   }
 
   &__authors {
+    margin: auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-items: stretch;

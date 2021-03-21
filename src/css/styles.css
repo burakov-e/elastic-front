@@ -321,22 +321,31 @@ textarea::-ms-input-placeholder {
   background: rgba(0, 0, 0, 0.8);
   backdrop-filter: blur(20px);
   padding: 0.9rem 3rem;
-  display: grid;
-  grid-template-columns: 1fr 3fr;
+  display: flex;
   align-items: center;
+  flex-wrap: wrap;
+}
+.footer__logo {
+  margin: auto;
 }
 .footer__logo img {
   width: 70px;
   height: auto;
 }
 .footer__copyright {
-  display: grid;
-  grid-template-columns: 1fr 3fr;
+  margin: auto;
+  display: flex;
   align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
   font-size: 0.8rem;
   color: rgba(255, 255, 255, 0.7);
 }
+.footer__copyright .copy {
+  margin: auto;
+}
 .footer__authors {
+  margin: auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-items: stretch;

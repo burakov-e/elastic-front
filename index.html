@@ -43,12 +43,17 @@
                     </div>
 
                     <script type="module">
-                        let select = document.querySelector('.select');
+                        let select = document.querySelector('select');
 
-                        select.addEventListener('click', function () {
-                            this.closest('.select').classList.toggle('open');
-							this.closest('.select').classList.toggle('focus');
-						})
+                        select.addEventListener('focus', function () {
+                            this.closest('.select').classList.add('open');
+							this.closest('.select').classList.add('focus');
+						});
+
+						select.addEventListener('blur', function () {
+							this.closest('.select').classList.remove('open');
+							this.closest('.select').classList.remove('focus');
+						});
                     </script>
                 </div>
 
