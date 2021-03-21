@@ -265,10 +265,19 @@ body {
     overflow-y: auto;
 
     border-radius: 5px;
+    border: 1px solid transparent;
 
     font-size: 1rem;
     line-height: 1.5;
     word-spacing: 3px;
+
+    cursor: text;
+
+    transition: .3ms linear;
+
+    &:hover {
+      border-color: $pink;
+    }
   }
 }
 
